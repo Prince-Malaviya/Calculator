@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tab{
+            border-color: rgb(196, 14, 14);
+            
+            width: 30%;
+            height: 500px;
+            text-align: right;
+            
+
+        }
+        #ans{
+            width: auto;
+            height: 55px;
+            font-size: larger;
+        }
+        input[type="button"]{
+            width: 100%;
+            height: 100%;
+            background-color: aquamarine;
+            font-size: 25px;
+        }
+        
+    </style>
+</head>
+<body style="background-color: blanchedalmond;">
+    <h1 style="text-align: center;">CALCULATOR</h1>
+    </br>
+    </br>
+    
+    <table border="2px solid" align="center" id="tab">
+        <tr>
+            <td style="background-color: aquamarine;" colspan="4" id="ans"></td>
+          </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="addNo('7')"></td>
+            <td><input type="button" value="8" onclick="addNo('8')"></td>
+            <td><input type="button" value="9" onclick="addNo('9')"></td>
+            <td><input type="button" value="+" onclick="addNo('+')"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="4" onclick="addNo('4')"></td>
+            <td><input type="button" value="5" onclick="addNo('5')"></td>
+            <td><input type="button" value="6"onclick="addNo('6')"></td>
+            <td><input type="button" value="-" onclick="addNo('-')"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="1" onclick="addNo('1')"></td>
+            <td><input type="button" value="2" onclick="addNo('2')"></td>
+            <td><input type="button" value="3" onclick="addNo('3')"></td>
+            <td><input type="button" value="*" onclick="addNo('*')"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="c" onclick="clearAns()"></td>
+            <td><input type="button" value="0" onclick="addNo('0')"></td> 
+            <td><input type="button" value="=" onclick="calculate()"></td>
+            <td><input type="button" value="/" onclick="addNo('/')"></td>
+        </tr>
+
+          
+
+    </table>
+    <script>
+      function addNo(value) {
+           ans= document.getElementById('ans');
+           ans.innerHTML += value; 
+        }
+        
+        function clearAns() {
+            ans=document.getElementById('ans');
+            ans.innerHTML="";
+        }
+
+        function calculate() {
+             ans = document.getElementById('ans');
+             finalans = eval(ans.innerHTML);
+             ans.innerHTML = finalans;
+        }
+        
+    </script>
+</body>
+</html>
